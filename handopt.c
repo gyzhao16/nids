@@ -223,22 +223,22 @@ int ids_func(void *ptr)
 						tot_proc++;
 						tot_bytes += bbatch[j + k].len;
 
-						int pat_i;
+						// int pat_i;
 
-						#if DEBUG == 1
-						printf("Pkt %d matched: ", bbatch[j + k].pkt_id);
+						// #if DEBUG == 1
+						// printf("Pkt %d matched: ", bbatch[j + k].pkt_id);
 
-						for(pat_i = 0; pat_i < num_match; pat_i++) {
-							printf("%d ", mp_list[k].ptrn_id[pat_i]);
-							matched_pat_sum += mp_list[k].ptrn_id[pat_i];
-						}
+						// for(pat_i = 0; pat_i < num_match; pat_i++) {
+						// 	printf("%d ", mp_list[k].ptrn_id[pat_i]);
+						// 	matched_pat_sum += mp_list[k].ptrn_id[pat_i];
+						// }
 
-						printf("\n");
-						#else
-						for(pat_i = 0; pat_i < num_match; pat_i++) {
-							matched_pat_sum += mp_list[k].ptrn_id[pat_i];
-						}
-						#endif
+						// printf("\n");
+						// #else
+						// for(pat_i = 0; pat_i < num_match; pat_i++) {
+						// 	matched_pat_sum += mp_list[k].ptrn_id[pat_i];
+						// }
+						// #endif
 
 						/* Re-initialize for next iteration */
 						mp_list[k].num_match = 0;
@@ -428,11 +428,11 @@ int main(int argc, char *argv[])
 	// assert(0);
 	if (success == 1)
 	{
-		printf("{\"msg\":\"Packet matched patterns. success = %d test = %d\"}", success, test);
+		printf("{\"msg\":\"Packet matched patterns. success = %d.\"}", success);
 	}
 	else
 	{
-		printf("{\"msg\":\"Packet did not match patterns. success = %d test = %d\"}", success, test);
+		printf("{\"msg\":\"Packet did not match patterns. success = %d.\"}", success);
 	}
 	// return 0;
 }
